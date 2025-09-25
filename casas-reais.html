@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casas Reais</title>
+  <style>
+    * { background-color: #4c3a51; margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: Georgia, 'Times New Roman', Times, serif; color: #e7ab79; }
+    h1 { font-family: 'Times New Roman', Times, serif; font-weight:bold; color:#ffa500; font-style:italic; text-align:center; margin:30px 0; }
+    p { color: #e7ab79; text-align: center; font-family: Georgia, 'Times New Roman', Times, serif; text-decoration: italic; line-height: 1.5; }
+    .card { background-color: #5a4063; border-radius: 15px; max-width: 800px; margin: 20px auto; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: transform 0.3s; }
+    .card:hover { transform: scale(1.02); }
+    .card img { width: 100%; border-radius: 10px; }
+    .TITULOCSA { text-align: center; font-size: 18px; font-weight: bold; margin: 10px 0; color: #ffee8c; }
+    .btn { display: inline-block; margin: 10px 5px; padding: 10px 20px; background-color: #3498db; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; transition: background-color 0.3s; }
+    .btn:hover { background-color: #2980b9; }
+    .price { text-align: center; font-weight: bold; margin-top: 5px; color: #f5da42; }
+    #saldo { text-align: center; font-size: 20px; color: #00ff00; margin: 20px 0; }
+    .top-link { text-align: center; margin-top: 10px; }
+    .top-link a { color: #ffa500; text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<h1>🏡 Casas Reais</h1>
+
+<div id="saldo">Saldo: R$0</div>
+<div style="text-align:center; margin-bottom:20px;">
+  <button class="btn" onclick="ganharDinheiro()">💰 Ganhar 1 real</button>
+</div>
+
+<!-- Casa 1 -->
+<div class="card">
+  <img src="wtqh3-whatsapp-image-2025-08-28-at-135824-16-1756401317.webp" alt="Casa 1">
+  <div class="TITULOCSA">Casa para Aluguel em Chapecó - Bairro Palmital</div>
+  <p>3 dormitórios (1 suíte com closet), sala de estar e jantar integradas, cozinha planejada, banheiro social + lavabo, garagem coberta para 2 carros, espaço gourmet com churrasqueira e quintal amplo.</p>
+  <div class="price">Preço: R$500</div>
+  <button class="btn" onclick="comprarCasa(500)">Comprar</button>
+</div>
+
+<!-- Casa 2 -->
+<div class="card">
+  <img src="recrRY78CNkpnNta9.webp" alt="Casa 2">
+  <div class="TITULOCSA">Casa para Aluguel em SP</div>
+  <p>2 dormitórios, sala de estar, cozinha, 2 banheiros, área da lavanderia. Possui garagem coberta.</p>
+  <div class="price">Preço: R$300</div>
+  <button class="btn" onclick="comprarCasa(300)">Comprar</button>
+</div>
+
+<!-- Casa 3 -->
+<div class="card">
+  <img src="original895083346-188.51208463155078IMG5877.webp" alt="Casa 3">
+  <div class="TITULOCSA">Casa em SC - Bairro Rio Da Luz</div>
+  <p>4 dormitórios, sala de estar, cozinha espaçosa, lavanderia, espaço com área livre, banheiro social. Possui garagem com duas vagas.</p>
+  <div class="price">Preço: R$400</div>
+  <button class="btn" onclick="comprarCasa(400)">Comprar</button>
+</div>
+
+<!-- Casa 4 -->
+<div class="card">
+  <img src="6ebbc458c9c82d17324aa73ff94e3648.jpg" alt="Casa 4">
+  <div class="TITULOCSA">Casa para Aluguel em Chapecó - Bairro Passo dos Fortes</div>
+  <p>2 dormitórios, ampla sala de estar, cozinha espaçosa, banheiro social, área de serviço e quintal nos fundos. Possui garagem coberta.</p>
+  <div class="price">Preço: R$350</div>
+  <button class="btn" onclick="comprarCasa(350)">Comprar</button>
+</div>
+
+<div class="top-link"><a href="index.html">⬅ Voltar à Página Inicial</a></div>
+
+<script>
+  let saldo = parseInt(localStorage.getItem('saldo')) || 0;
+  document.getElementById('saldo').innerText = `Saldo: R$${saldo}`;
+
+  function ganharDinheiro() {
+    saldo += 1;
+    document.getElementById('saldo').innerText = `Saldo: R$${saldo}`;
+    localStorage.setItem('saldo', saldo);
+  }
+
+  function comprarCasa(preco) {
+    if(saldo >= preco) {
+      saldo -= preco;
+      document.getElementById('saldo').innerText = `Saldo: R$${saldo}`;
+      localStorage.setItem('saldo', saldo);
+      alert('Parabéns! Você comprou a casa.');
+    } else {
+      alert('Saldo insuficiente! Ganhe mais dinheiro para comprar esta casa.');
+    }
+  }
+</script>
+
+</body>
+</html>
