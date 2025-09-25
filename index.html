@@ -3,17 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Imobiliária</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Imobiliária Interativa</title>
+  <style>
+    * { background-color: #4c3a51; margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: Georgia, 'Times New Roman', Times, serif; color: #e7ab79; text-align: center; }
+    h1 { font-family: 'Times New Roman', Times, serif; font-weight:bold; color:#ffa500; font-style:italic; margin-top:50px; }
+    .link-btn {
+      display: inline-block;
+      margin: 30px 20px;
+      padding: 20px 40px;
+      background-color: #3498db;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 20px;
+      transition: background-color 0.3s;
+    }
+    .link-btn:hover { background-color: #2980b9; }
+  </style>
 </head>
 <body>
-  <div class="inicial">
-  <center><h1>Imóveis para Alugar</h1></center>
-  <br>
-  <center>
-    <a style="color: #e7ab79;" href="casas.html">Casas Reais</a><br>
-    <a style="color: #e7ab79;"href="apartamentos.html">Casas Fictícias</a><br>
-  </center>
-</div>
+
+<h1>🏠 Bem-vindo à Imobiliária Interativa</h1>
+<p>Escolha o tipo de imóveis que você deseja explorar:</p>
+
+<a href="casas-reais.html" class="link-btn">Casas Reais</a>
+<a href="casas-ficticias.html" class="link-btn">Casas Fictícias</a>
+
 </body>
 </html>
